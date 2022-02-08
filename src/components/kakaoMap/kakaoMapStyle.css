@@ -1,0 +1,92 @@
+.main {
+	/* z-index: 1; */
+	position: absolute;
+	background-color: azure;
+	transition: all 100ms;
+	height: 100vh;
+	width: 100%;
+}
+.main .map {
+}
+.box:hover {
+	width: 200px;
+	height: 200px;
+	background-color: blueviolet;
+}
+
+.circle {
+	width: 50px;
+	height: 50px;
+	background-color: blueviolet;
+}
+
+.square {
+	position: relative;
+	height: 100px;
+}
+
+.left,
+.center,
+.right {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+}
+
+.left {
+	background: red;
+}
+.center {
+	background: yellow;
+}
+.right {
+	background: blue;
+}
+
+/* we need room for a 20 pixel border radius (on one side) */
+.left,
+.right {
+	width: 20px;
+}
+
+.left {
+	border-radius: 20px 0 0 20px;
+}
+.right {
+	border-radius: 0 20px 20px 0;
+}
+
+/* child layout definitions */
+.center {
+	/* center needs to be 20 pixels from the left, 
+    so it doesn't overlap with the .left element */
+	left: 20px;
+
+	/* needs a width of 1 pixel, this causes 
+    scaleX(60) is equal to 60 pixels */
+	width: 1px;
+	transform: scaleX(100);
+
+	/* we need to scale the texture from the left side 
+    for it to align correctly, default is center */
+	transform-origin: left;
+}
+
+.right {
+	/* we need to move the right element to align with
+    the right side of the .center element 
+    20px + 60px = 80px */
+	transform: translateX(80px);
+}
+.center {
+	animation: center-animate 2s ease;
+}
+
+@keyframes center-animate {
+	0% {
+		transform: scaleX(0);
+	}
+	100% {
+		transform: scaleX(100);
+	}
+}

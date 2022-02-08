@@ -1,0 +1,137 @@
+.member-container {
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%);
+	width: 100%;
+	max-width: var(--max-width);
+	min-width: var(--min-width);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--color-white);
+	/* border-top: 1px solid#999; */
+	border-radius: 20px;
+	z-index: 100;
+}
+
+.member-container input[name='arrow-down'] {
+	display: none;
+}
+
+.member-container input[name='arrow-down']:checked ~ .result-list-wrapper {
+	height: 0;
+}
+
+.member-container
+	input[name='arrow-down']:checked
+	~ .top-wrapper
+	> .arrow-down
+	> .arrow-mark {
+	transform: rotate(135deg);
+	top: 5px;
+}
+/* top-wrapper[s] */
+.top-wrapper {
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	padding: 1em 0.3em;
+}
+
+.top-title {
+	margin-right: auto;
+	margin-left: 20px;
+}
+
+.chatbox-outline {
+	font-size: 1.7rem;
+	cursor: pointer;
+}
+/* top-wrapper[e] */
+/* member-list-container [s] */
+.member-list-container {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	padding: 1em 0.3em;
+}
+
+.member-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 0.8em;
+	padding-top: 0.8em;
+}
+
+.member-item:not(:last-child) {
+	border-bottom: var(--raw-border-line);
+}
+
+.profile-image {
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	background-color: var(--color-profile-bg);
+	position: relative;
+	cursor: pointer;
+}
+
+.profile-image-blue {
+	border: 2px solid blue;
+}
+
+.profile-image-red {
+	border: 2px solid red;
+}
+
+.profile-image-yellow {
+	border: 2px solid yellow;
+}
+
+.profile-image-green {
+	border: 2px solid green;
+}
+
+.profile-image-status {
+	position: absolute;
+	top: 0;
+	right: -3px;
+	border-radius: 50%;
+}
+
+.profile-image-icon {
+	font-size: 2rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+}
+
+.member-name {
+	margin: 0 15px;
+}
+
+.member-status {
+	margin-left: auto;
+	font-size: 0.75rem;
+	padding: 0 2em;
+	border-radius: 5px;
+}
+
+.sticker-too-late {
+	color: var(--color-white);
+	background-color: var(--color-sticker-too-late);
+}
+
+.sticker-arrive {
+	color: var(--color-black);
+	background-color: var(--color-sticker-arrive);
+}
+
+.sticker-late {
+	color: var(--color-black);
+	background-color: var(--color-sticker-late);
+}
